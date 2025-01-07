@@ -30,10 +30,10 @@ export default function Error({
           travaille à résoudre le problème.
         </p>
         <div className="flex justify-center gap-4">
-          <Button onClick={reset} variant="default">
+          <Button onClick={reset}>
             Réessayer
           </Button>
-          <Button asChild variant="outline">
+          <Button asChild>
             <Link href="/">Retour à l'accueil</Link>
           </Button>
         </div>

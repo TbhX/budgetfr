@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import { useState } from "react"
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
@@ -15,10 +15,12 @@ interface ShareBudgetDialogProps {
 
 export function ShareBudgetDialog({ budget }: ShareBudgetDialogProps) {
   const [description, setDescription] = useState("")
-  
+
+  // URL et texte pour le partage
   const shareUrl = `https://budgetfr.fr/share/${budget.year}`
   const shareText = `Mon budget pour la France ${budget.year} - Total: ${formatAmount(budget.totalExpenses)}`
 
+  // Liens pour les réseaux sociaux
   const socialLinks = {
     twitter: `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`,
     facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`,
@@ -28,7 +30,7 @@ export function ShareBudgetDialog({ budget }: ShareBudgetDialogProps) {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline" className="gap-2">
+        <Button className="gap-2" variant="outline">
           <Share2 className="h-4 w-4" />
           Partager mon budget
         </Button>

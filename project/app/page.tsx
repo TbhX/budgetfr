@@ -32,7 +32,7 @@ export default function Home() {
             Explorez les différentes missions et programmes, analysez l'impact de vos décisions.
           </p>
           <div className="space-x-4">
-            <Button size="lg" asChild>
+            <Button asChild>
               <Link href="/simulateur">Commencer la simulation</Link>
             </Button>
             <AboutDialog />

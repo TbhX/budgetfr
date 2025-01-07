@@ -18,7 +18,7 @@ export function MissionDetails({ mission }: MissionDetailsProps) {
   const details = MISSION_DETAILS[mission.id as MissionId] || {
     longDescription: mission.description,
     keyObjectives: [],
-    programs: []
+    programs: [] as { name: string; budget: number; description: string }[] // Assurez-vous que `programs` est un tableau modifiable
   }
 
   return (

@@ -1,23 +1,23 @@
 "use client"
 
-import { BarChart as RechartsBarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts"
+import { BarChart as RechartsBarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
 
 interface BarChartProps {
   data: Array<{
-    name: string
-    budget: number
-  }>
+    name: string;
+    budget: number;
+  }>;
 }
 
 export function BarChart({ data }: BarChartProps) {
   return (
     <ResponsiveContainer width="100%" height="100%">
       <RechartsBarChart data={data}>
-        <XAxis 
+        <XAxis
           dataKey="name"
           tick={{ fill: 'hsl(var(--foreground))' }}
         />
-        <YAxis 
+        <YAxis
           tickFormatter={(value) => `${value} Mds €`}
           tick={{ fill: 'hsl(var(--foreground))' }}
         />
@@ -29,12 +29,12 @@ export function BarChart({ data }: BarChartProps) {
             borderRadius: "var(--radius)",
           }}
         />
-        <Bar 
-          dataKey="budget" 
+        <Bar
+          dataKey="budget"
           fill="hsl(var(--primary))"
           radius={[4, 4, 0, 0]}
         />
       </RechartsBarChart>
     </ResponsiveContainer>
-  )
+  );
 }

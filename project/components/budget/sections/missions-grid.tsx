@@ -22,7 +22,7 @@ export function MissionsGrid({ missions, onMissionBudgetChange, maxBudget }: Mis
         >
           <MissionCard
             mission={mission}
-            onBudgetChange={(newBudget) => onMissionBudgetChange(mission.id, newBudget)}
+            onBudgetChange={(newBudget) => onMissionBudgetChange(String(mission.id), Number(newBudget))}
             maxBudget={maxBudget}
           />
         </motion.div>

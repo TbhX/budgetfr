@@ -2,12 +2,14 @@
 
 import { motion } from "framer-motion"
 import { PieChart, Pie, Cell, ResponsiveContainer, Legend, Tooltip } from "recharts"
-import { Mission } from "@/types/budget"
+import { Mission } from "@/types/budget"; // Importation du type Mission existant
 import { formatAmount } from "@/lib/budget-utils"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
+// Pas besoin de redéclarer le type Mission ici, il est déjà importé
+
 interface BudgetChartProps {
-  missions: Mission[]
+  missions: Mission[]; // Utilisation du type Mission importé
 }
 
 export function BudgetChart({ missions }: BudgetChartProps) {

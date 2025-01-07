@@ -1,18 +1,17 @@
-"use client"
-
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Mission } from "@/types/budget"
-import { formatAmount } from "@/lib/budget-utils"
-import { Progress } from "@/components/ui/progress"
+// components/budget/mission-card.tsx
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Mission } from "@/types/budget";
+import { formatAmount } from "@/lib/budget-utils";
+import { Progress } from "@/components/ui/progress";
 
 interface MissionCardProps {
-  mission: Mission
-  totalBudget: number
-  onClick?: () => void
+  mission: Mission;
+  totalBudget: number;
+  onClick?: () => void;
 }
 
 export function MissionCard({ mission, totalBudget, onClick }: MissionCardProps) {
-  const percentage = (mission.budget / totalBudget) * 100
+  const percentage = (mission.budget / totalBudget) * 100;
 
   return (
     <Card className="hover:shadow-lg transition-shadow cursor-pointer" onClick={onClick}>
@@ -33,5 +32,5 @@ export function MissionCard({ mission, totalBudget, onClick }: MissionCardProps)
         </div>
       </CardContent>
     </Card>
-  )
+  );
 }

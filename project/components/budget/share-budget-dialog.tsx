@@ -18,7 +18,7 @@ export function ShareBudgetDialog({ budget }: ShareBudgetDialogProps) {
 
   // URL et texte pour le partage
   const shareUrl = `https://budgetfr.fr/share/${budget.year}`
-  const shareText = `Mon budget pour la France ${budget.year} - Total: ${formatAmount(budget.totalExpenses)}`
+  const shareText = `Mon budget pour la France ${budget.year} - Total des dépenses: ${formatAmount(budget.totalExpenses)} - Revenus: ${formatAmount(budget.totalRevenues)} - Déficit: ${formatAmount(budget.deficit)} - Ratio de dette: ${budget.debtRatio}%`
 
   // Liens pour les réseaux sociaux
   const socialLinks = {

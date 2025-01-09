@@ -68,7 +68,7 @@ export function MissionDetails({ mission }: MissionDetailsProps) {
               </CardHeader>
               <CardContent>
                 <div className="h-[300px]">
-                  <BarChart data={details.programs} />
+                  <BarChart data={[...details.programs]} /> {/* Convertir en tableau mutable */}
                 </div>
               </CardContent>
             </Card>

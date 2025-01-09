@@ -1,12 +1,10 @@
-"use client"
-
 import { create } from "zustand"
 import { Budget } from "@/types/budget"
 import { getInitialBudget } from "@/lib/utils/budget"
 
 interface BudgetStore {
   budget: Budget
-  updateMissionBudget: (missionId: string, newBudget: number) => void
+  updateMissionBudget: (missionId: number, newBudget: number) => void
   updateRevenue: (revenueId: string, newAmount: number) => void
   resetBudget: () => void
 }

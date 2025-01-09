@@ -1,13 +1,13 @@
-"use client"
+"use client";
 
-import { Mission } from "@/types/budget"
-import { MissionCard } from "../cards/mission-card"
-import { motion } from "framer-motion"
+import { Mission } from "@/types/budget";
+import { MissionCard } from "../cards/mission-card";
+import { motion } from "framer-motion";
 
 interface MissionsGridProps {
-  missions: Mission[]
-  onMissionBudgetChange: (missionId: string, newBudget: number) => void
-  maxBudget: number
+  missions: Mission[];
+  onMissionBudgetChange: (missionId: string, newBudget: number) => void;
+  maxBudget: number;
 }
 
 export function MissionsGrid({ missions, onMissionBudgetChange, maxBudget }: MissionsGridProps) {
@@ -22,11 +22,11 @@ export function MissionsGrid({ missions, onMissionBudgetChange, maxBudget }: Mis
         >
           <MissionCard
             mission={mission}
-            onBudgetChange={(newBudget) => onMissionBudgetChange(mission.id, newBudget)}
+            onBudgetChange={(newBudget) => onMissionBudgetChange(String(mission.id), newBudget)}
             maxBudget={maxBudget}
           />
         </motion.div>
       ))}
     </div>
-  )
+  );
 }

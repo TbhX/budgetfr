@@ -8,6 +8,7 @@ import { useBudget } from "@/lib/hooks/use-budget"
 import { calculateImpact } from "@/lib/utils/budget"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { DEFAULT_ECONOMIC_INDICATORS } from "@/lib/config/constants"
+import { Budget, Revenue } from "@/types/budget"
 
 export function BudgetSimulator() {
   const { budget, updateMissionBudget, updateRevenue } = useBudget()
@@ -31,7 +32,7 @@ export function BudgetSimulator() {
           </TabsContent>
           <TabsContent value="revenues" className="mt-6">
             <RevenuesGrid
-              revenues={budget.revenues}
+              revenues={budget.revenues as unknown as Revenue[]}
               onRevenueChange={updateRevenue}
             />
           </TabsContent>
